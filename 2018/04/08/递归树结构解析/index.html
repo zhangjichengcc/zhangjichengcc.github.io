@@ -3,18 +3,22 @@
 <head>
     <meta charset="utf-8">
     
-    <title>分类: 工具 | ZJC</title>
+    <title>递归树结构解析 | ZJC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Zhangjicheng个人站，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ZJC">
-<meta property="og:url" content="https://zhangjichengcc.github.io/bolg/categories/工具/index.html">
+    <meta name="description" content="用递归的方式将树结构从根到叶子节点解析成数组">
+<meta name="keywords" content="js,前端,算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="递归树结构解析">
+<meta property="og:url" content="https://zhangjichengcc.github.io/bolg/2018/04/08/递归树结构解析/index.html">
 <meta property="og:site_name" content="ZJC">
-<meta property="og:description" content="Zhangjicheng个人站，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面">
+<meta property="og:description" content="用递归的方式将树结构从根到叶子节点解析成数组">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://zhangjichengcc.github.io/bolg/2018/10/08/递归树结构解析/banner.jpg">
+<meta property="og:updated_time" content="2018-11-30T01:13:52.465Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZJC">
-<meta name="twitter:description" content="Zhangjicheng个人站，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面">
+<meta name="twitter:title" content="递归树结构解析">
+<meta name="twitter:description" content="用递归的方式将树结构从根到叶子节点解析成数组">
+<meta name="twitter:image" content="https://zhangjichengcc.github.io/bolg/2018/10/08/递归树结构解析/banner.jpg">
     
 
     
@@ -177,122 +181,186 @@
 </aside>
 
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fas fa-folder"></i></span>
-        <h1 class="title">工具</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-递归树结构解析" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            
+	
+		<img src="/bolg/2018/10/08/递归树结构解析/banner.jpg" class="article-banner" />
+	
+
+
+
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/bolg/2018/03/20/给Hexo博客添加访问统计/">给Hexo博客添加访问统计</a>
+        <h1 class="article-title" itemprop="name">
+            递归树结构解析
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fas fa-calendar-alt"></i>
-        <a href="/bolg/2018/03/20/给Hexo博客添加访问统计/">
-            <time datetime="2018-03-20T08:35:58.000Z" itemprop="datePublished">2018-03-20</time>
+        <a href="/bolg/2018/04/08/递归树结构解析/">
+            <time datetime="2018-04-08T03:40:07.000Z" itemprop="datePublished">2018-04-08</time>
         </a>
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/bolg/categories/工具/">工具</a>
+        <a class="article-category-link" href="/bolg/categories/笔记/">笔记</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/bolg/tags/hexo/">hexo</a>
+        <a class="tag-link" href="/bolg/tags/js/">js</a>, <a class="tag-link" href="/bolg/tags/前端/">前端</a>, <a class="tag-link" href="/bolg/tags/算法/">算法</a>
     </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                        </br>
+                        <span class="article-meta-readCount" id="busuanzi_container_page_pv">
+                           阅读量<span id="busuanzi_value_page_pv"></span>次
+                        </span>
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/bolg/2018/02/27/hexo-创建文章/">hexo 创建文章 &amp; 文章缩略图及banner &amp; MarkDown</a>
-        </h1>
-    
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>用递归的方式将树结构从根到叶子节点解析成数组<br><a id="more"></a></p>
+<p>从后台获取树结构的 json 数据，渲染成树图结构<br>由于项目需求，需要将所有可行链路展示出来，于是采用递归方式将树结构解析为数组<br>算法不算复杂，但用很多细节需要注意，很有价值，故记录下来以备以后查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">数据结构如下：                  目标数组如下：         </span><br><span class="line">     a                       </span><br><span class="line">    / \                      1) [a, b, c]</span><br><span class="line">   b   e         ==&gt;&gt;        2) [a, b, d]</span><br><span class="line">  / \   \                    3) [a, e, f]</span><br><span class="line"> c   d   f</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;</span><br><span class="line">  val: <span class="string">'a'</span>,</span><br><span class="line">  children: [</span><br><span class="line">    &#123; val: <span class="string">'b'</span>, children: [</span><br><span class="line">        &#123; val: <span class="string">'c'</span>, children: [] &#125;,</span><br><span class="line">        &#123; val: <span class="string">'d'</span>, children: [] &#125;,</span><br><span class="line">      ],</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123; val: <span class="string">'e'</span>, children: [</span><br><span class="line">        &#123; val: <span class="string">'f'</span>, &#125;</span><br><span class="line">      ],</span><br><span class="line">    &#125;,</span><br><span class="line">  ],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>废话不多说，直接上代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 法一</span><br><span class="line">const initArr = (obj) =&gt; &#123;</span><br><span class="line">  const newArr = [];                                        // 定义空数组，用于每次遍历结束后存储结果</span><br><span class="line">  (<span class="keyword">function</span> travel(item, arr)&#123;                              // 回调函数，立即执行 item为每次执行处理的对象，arr为叠加数组</span><br><span class="line">    <span class="keyword">if</span> (item.children &amp;&amp; item.children.length) &#123;            // 判断是否存在子元素，存在则遍历子元素递归调用</span><br><span class="line">      <span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; item.children.length; i += 1) &#123;</span><br><span class="line">        travel(item.children[i], arr.concat(item));         // 递归调用，并对数组 arr 进行叠加，注：此处不能用push，因此处是作为参数用来传递的，push 返回的是数组长度</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;                                                // 若不存在子元素，则一条链路遍历结束，将叠加数组添加到 newArr 中</span><br><span class="line">      newArr.push(arr.concat(item));                        // 注意此处要记得将本次递归的 item 添加到arr中</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;(obj, []));                                              // 初始递归调用，此时的 item 为传入的树结构， 叠加数组arr为空</span><br><span class="line">  <span class="built_in">return</span> newArr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 法二</span><br><span class="line">const initArr = (obj) =&gt; &#123;</span><br><span class="line">  const newArr = [];</span><br><span class="line">  (<span class="keyword">function</span> travel(item, arr)&#123;</span><br><span class="line">    const itemArr = [...arr];                      // ES6 深拷贝数组，此处是让每次travel都有一个独立的itemArr, 防止公用全局arr叠加时造成污染</span><br><span class="line">    itemArr.push(item);                            // 由于 itemArr 为每次递归独立的叠加数组，故直接 push 改变数组本身即可</span><br><span class="line">    <span class="keyword">if</span> (item.children &amp;&amp; item.children.length) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="built_in">let</span> i <span class="keyword">in</span> item.children) &#123;</span><br><span class="line">        travel(data.children[i], itemArr);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      newArr.push(itemArr);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)(obj, [])</span><br><span class="line">  <span class="built_in">return</span> newArr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>结果如下图</code><br><img src="/bolg/2018/04/08/递归树结构解析/result.jpg" alt="递归解析树结构"></p>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/bolg/2018/02/27/hexo-创建文章/">
-            <time datetime="2018-02-27T06:29:09.000Z" itemprop="datePublished">2018-02-27</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/bolg/categories/工具/">工具</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/bolg/tags/hexo/">hexo</a>, <a class="tag-link" href="/bolg/tags/markdown/">markdown</a>, <a class="tag-link" href="/bolg/tags/前端/">前端</a>
-    </div>
-
-                </div>
-            </div>
+        
         </div>
+        
+            
     
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
+        <section id="comments">
+    <h2 class="valine-title">
+        <i class="fas fa-write"></i>评论区
+        <span class="valine-title-info">（请完善信息用于邮件接收评论的反馈）</span>
+    </h2>
+    <div id="valine-thread"></div>
+</section>
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/bolg/2018/02/05/hexo常用指令/">hexo常用指令</a>
-        </h1>
-    
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/bolg/2018/02/05/hexo常用指令/">
-            <time datetime="2018-02-05T06:29:09.000Z" itemprop="datePublished">2018-02-05</time>
-        </a>
-    </div>
+        
+        <footer class="article-footer">
+            <div class="share-container">
 
 
-                    
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/bolg/categories/工具/">工具</a>
-    </div>
 
-                    
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/bolg/tags/hexo/">hexo</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
 </div>
+
+    <a data-url="https://zhangjichengcc.github.io/bolg/2018/04/08/递归树结构解析/" data-id="cjp9lhf7d000r3cuj9jtx3bjg" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/bolg/2018/04/08/递归尾调用优化/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    递归尾调用优化
+                
+            </div>
+        </a>
+    
+    
+        <a href="/bolg/2018/03/20/给Hexo博客添加访问统计/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">给Hexo博客添加访问统计</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
 </section>
             
                 

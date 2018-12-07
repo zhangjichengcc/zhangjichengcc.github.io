@@ -2248,6 +2248,192 @@ a
 .ins-section .ins-search-item.active .ins-search-preview {
   color: #fff;
 }
+#loadingbar {
+  position: fixed;
+  overflow: hidden;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  border-radius: 0 3px 3px 0;
+  background-color: #03a9f4;
+}
+#loadingbar:before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  max-width: 40px;
+  height: 100%;
+  background: -webkit-linear-gradient(left, rgba(0,0,0,0), #fff, rgba(0,0,0,0));
+  background: -moz-linear-gradient(left, rgba(0,0,0,0), #fff, rgba(0,0,0,0));
+  background: -ms-linear-gradient(left, rgba(0,0,0,0), #fff, rgba(0,0,0,0));
+  background: linear-gradient(to right, rgba(0,0,0,0), #fff, rgba(0,0,0,0));
+  -webkit-animation: becolor 5s linear 0s infinite normal;
+  -moz-animation: becolor 5s linear 0s infinite normal;
+  -ms-animation: becolor 5s linear 0s infinite normal;
+  animation: becolor 5s linear 0s infinite normal;
+}
+@-moz-keyframes bgcolor {
+  0% {
+    background: -webkit-linear-gradient(left, #fff, #0f0);
+    background: -moz-linear-gradient(left, #fff, #0f0);
+    background: -ms-linear-gradient(left, #fff, #0f0);
+    background: linear-gradient(to right, #fff, #0f0);
+  }
+  25% {
+    background: -webkit-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: -moz-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: -ms-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: linear-gradient(to right, #fff, #0f0, #fff, #0f0);
+  }
+  50% {
+    background: -webkit-linear-gradient(left, #fff, #0f0);
+    background: -moz-linear-gradient(left, #fff, #0f0);
+    background: -ms-linear-gradient(left, #fff, #0f0);
+    background: linear-gradient(to right, #fff, #0f0);
+  }
+  75% {
+    background: -webkit-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: -moz-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: -ms-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: linear-gradient(to right, #fff, #0f0, #fff, #0f0);
+  }
+  100% {
+    background: -webkit-linear-gradient(left, #fff, #0f0);
+    background: -moz-linear-gradient(left, #fff, #0f0);
+    background: -ms-linear-gradient(left, #fff, #0f0);
+    background: linear-gradient(to right, #fff, #0f0);
+  }
+}
+@-webkit-keyframes bgcolor {
+  0% {
+    background: -webkit-linear-gradient(left, #fff, #0f0);
+    background: -moz-linear-gradient(left, #fff, #0f0);
+    background: -ms-linear-gradient(left, #fff, #0f0);
+    background: linear-gradient(to right, #fff, #0f0);
+  }
+  25% {
+    background: -webkit-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: -moz-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: -ms-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: linear-gradient(to right, #fff, #0f0, #fff, #0f0);
+  }
+  50% {
+    background: -webkit-linear-gradient(left, #fff, #0f0);
+    background: -moz-linear-gradient(left, #fff, #0f0);
+    background: -ms-linear-gradient(left, #fff, #0f0);
+    background: linear-gradient(to right, #fff, #0f0);
+  }
+  75% {
+    background: -webkit-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: -moz-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: -ms-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: linear-gradient(to right, #fff, #0f0, #fff, #0f0);
+  }
+  100% {
+    background: -webkit-linear-gradient(left, #fff, #0f0);
+    background: -moz-linear-gradient(left, #fff, #0f0);
+    background: -ms-linear-gradient(left, #fff, #0f0);
+    background: linear-gradient(to right, #fff, #0f0);
+  }
+}
+@-o-keyframes bgcolor {
+  0% {
+    background: -webkit-linear-gradient(left, #fff, #0f0);
+    background: -moz-linear-gradient(left, #fff, #0f0);
+    background: -ms-linear-gradient(left, #fff, #0f0);
+    background: linear-gradient(to right, #fff, #0f0);
+  }
+  25% {
+    background: -webkit-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: -moz-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: -ms-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: linear-gradient(to right, #fff, #0f0, #fff, #0f0);
+  }
+  50% {
+    background: -webkit-linear-gradient(left, #fff, #0f0);
+    background: -moz-linear-gradient(left, #fff, #0f0);
+    background: -ms-linear-gradient(left, #fff, #0f0);
+    background: linear-gradient(to right, #fff, #0f0);
+  }
+  75% {
+    background: -webkit-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: -moz-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: -ms-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: linear-gradient(to right, #fff, #0f0, #fff, #0f0);
+  }
+  100% {
+    background: -webkit-linear-gradient(left, #fff, #0f0);
+    background: -moz-linear-gradient(left, #fff, #0f0);
+    background: -ms-linear-gradient(left, #fff, #0f0);
+    background: linear-gradient(to right, #fff, #0f0);
+  }
+}
+@keyframes bgcolor {
+  0% {
+    background: -webkit-linear-gradient(left, #fff, #0f0);
+    background: -moz-linear-gradient(left, #fff, #0f0);
+    background: -ms-linear-gradient(left, #fff, #0f0);
+    background: linear-gradient(to right, #fff, #0f0);
+  }
+  25% {
+    background: -webkit-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: -moz-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: -ms-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: linear-gradient(to right, #fff, #0f0, #fff, #0f0);
+  }
+  50% {
+    background: -webkit-linear-gradient(left, #fff, #0f0);
+    background: -moz-linear-gradient(left, #fff, #0f0);
+    background: -ms-linear-gradient(left, #fff, #0f0);
+    background: linear-gradient(to right, #fff, #0f0);
+  }
+  75% {
+    background: -webkit-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: -moz-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: -ms-linear-gradient(left, #fff, #0f0, #fff, #0f0);
+    background: linear-gradient(to right, #fff, #0f0, #fff, #0f0);
+  }
+  100% {
+    background: -webkit-linear-gradient(left, #fff, #0f0);
+    background: -moz-linear-gradient(left, #fff, #0f0);
+    background: -ms-linear-gradient(left, #fff, #0f0);
+    background: linear-gradient(to right, #fff, #0f0);
+  }
+}
+@-moz-keyframes becolor {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@-webkit-keyframes becolor {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@-o-keyframes becolor {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@keyframes becolor {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
 .highlight {
   margin: 0px;
   display: block;

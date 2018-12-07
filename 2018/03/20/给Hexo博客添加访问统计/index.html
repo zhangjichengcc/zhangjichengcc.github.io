@@ -3,18 +3,22 @@
 <head>
     <meta charset="utf-8">
     
-    <title>分类: 工具 | ZJC</title>
+    <title>给Hexo博客添加访问统计 | ZJC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Zhangjicheng个人站，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ZJC">
-<meta property="og:url" content="https://zhangjichengcc.github.io/bolg/categories/工具/index.html">
+    <meta name="description" content="导语： 引入不蒜子为你的博客添加访问量">
+<meta name="keywords" content="hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="给Hexo博客添加访问统计">
+<meta property="og:url" content="https://zhangjichengcc.github.io/bolg/2018/03/20/给Hexo博客添加访问统计/index.html">
 <meta property="og:site_name" content="ZJC">
-<meta property="og:description" content="Zhangjicheng个人站，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面">
+<meta property="og:description" content="导语： 引入不蒜子为你的博客添加访问量">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://zhangjichengcc.github.io/bolg/2018/09/27/给Hexo博客添加访问统计/bsz.jpg">
+<meta property="og:updated_time" content="2018-11-30T01:13:34.492Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZJC">
-<meta name="twitter:description" content="Zhangjicheng个人站，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面">
+<meta name="twitter:title" content="给Hexo博客添加访问统计">
+<meta name="twitter:description" content="导语： 引入不蒜子为你的博客添加访问量">
+<meta name="twitter:image" content="https://zhangjichengcc.github.io/bolg/2018/09/27/给Hexo博客添加访问统计/bsz.jpg">
     
 
     
@@ -177,25 +181,21 @@
 </aside>
 
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fas fa-folder"></i></span>
-        <h1 class="title">工具</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-给Hexo博客添加访问统计" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/bolg/2018/03/20/给Hexo博客添加访问统计/">给Hexo博客添加访问统计</a>
+        <h1 class="article-title" itemprop="name">
+            给Hexo博客添加访问统计
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fas fa-calendar-alt"></i>
         <a href="/bolg/2018/03/20/给Hexo博客添加访问统计/">
@@ -204,95 +204,157 @@
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fas fa-folder"></i>
         <a class="article-category-link" href="/bolg/categories/工具/">工具</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link" href="/bolg/tags/hexo/">hexo</a>
     </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                        </br>
+                        <span class="article-meta-readCount" id="busuanzi_container_page_pv">
+                           阅读量<span id="busuanzi_value_page_pv"></span>次
+                        </span>
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/bolg/2018/02/27/hexo-创建文章/">hexo 创建文章 &amp; 文章缩略图及banner &amp; MarkDown</a>
-        </h1>
-    
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>导语： 引入不蒜子为你的博客添加访问量<br><a id="more"></a></p>
+<h3 id="引入不蒜子"><a href="#引入不蒜子" class="headerlink" title="引入不蒜子"></a>引入不蒜子</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script async src=<span class="string">"//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>这段代码可以写在footer.ejs里或者header.ejs里或者layout.ejs里</p>
+<h3 id="添加站点访问量"><a href="#添加站点访问量" class="headerlink" title="添加站点访问量"></a>添加站点访问量</h3><p>通常站点的总访问量会显示在footer的位置，所以我们可以在footer.ejs里加上如下标签：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span id=<span class="string">"busuanzi_container_site_uv"</span>&gt; </span><br><span class="line">  本站访客数&lt;span id=<span class="string">"busuanzi_value_site_uv"</span>&gt;&lt;/span&gt;人次</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
+<p>计算访问量的方法有两种：<br>算法a：pv的方式，单个用户连续点击n篇文章，记录n次访问量。<br>算法b：uv的方式，单个用户连续点击n篇文章，只记录1次访客数。<br>我用的是uv的方式，大家自行选择即可。</p>
+<h3 id="添加文章访问量"><a href="#添加文章访问量" class="headerlink" title="添加文章访问量"></a>添加文章访问量</h3><p>文章的访问量显示在文章里面，所以在article.ejs里加上文章访问量的标签：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span id=<span class="string">"busuanzi_container_page_pv"</span>&gt;</span><br><span class="line">   本文总阅读量&lt;span id=<span class="string">"busuanzi_value_page_pv"</span>&gt;&lt;/span&gt;次</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>由于原有的『dn-lbstatics.qbox.me』域名过期，需把原有的：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>域名改为：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>参考 : <a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener">不蒜子</a></p>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/bolg/2018/02/27/hexo-创建文章/">
-            <time datetime="2018-02-27T06:29:09.000Z" itemprop="datePublished">2018-02-27</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/bolg/categories/工具/">工具</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/bolg/tags/hexo/">hexo</a>, <a class="tag-link" href="/bolg/tags/markdown/">markdown</a>, <a class="tag-link" href="/bolg/tags/前端/">前端</a>
-    </div>
-
-                </div>
-            </div>
+        
         </div>
+        
+            
     
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
+        <section id="comments">
+    <h2 class="valine-title">
+        <i class="fas fa-write"></i>评论区
+        <span class="valine-title-info">（请完善信息用于邮件接收评论的反馈）</span>
+    </h2>
+    <div id="valine-thread"></div>
+</section>
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/bolg/2018/02/05/hexo常用指令/">hexo常用指令</a>
-        </h1>
-    
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/bolg/2018/02/05/hexo常用指令/">
-            <time datetime="2018-02-05T06:29:09.000Z" itemprop="datePublished">2018-02-05</time>
-        </a>
-    </div>
+        
+        <footer class="article-footer">
+            <div class="share-container">
 
 
-                    
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/bolg/categories/工具/">工具</a>
-    </div>
 
-                    
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/bolg/tags/hexo/">hexo</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
 </div>
+
+    <a data-url="https://zhangjichengcc.github.io/bolg/2018/03/20/给Hexo博客添加访问统计/" data-id="cjp9lhf78000k3cujd2yi64yj" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/bolg/2018/04/08/递归树结构解析/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    递归树结构解析
+                
+            </div>
+        </a>
+    
+    
+        <a href="/bolg/2018/02/27/hexo-创建文章/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">hexo 创建文章 &amp; 文章缩略图及banner &amp; MarkDown</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
 </section>
             
                 
