@@ -164,11 +164,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                11
+                13
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                8
+                10
                 <span>标签</span>
             </div>
         </div>
@@ -178,6 +178,288 @@
 
             
             <section id="main">
+    <article id="post-监听浏览器刷新及关闭" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/bolg/2018/12/12/监听浏览器刷新及关闭/">监听浏览器刷新及关闭</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/bolg/2018/12/12/监听浏览器刷新及关闭/">
+            <time datetime="2018-12-12T02:37:25.000Z" itemprop="datePublished">2018-12-12</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/bolg/categories/随笔/">随笔</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/bolg/tags/js/">js</a>, <a class="tag-link" href="/bolg/tags/前端/">前端</a>
+    </div>
+
+                        </br>
+                        <span class="article-meta-readCount" id="busuanzi_container_page_pv">
+                           阅读量<span id="busuanzi_value_page_pv"></span>次
+                        </span>
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>需求背景： 为保证‘高度安全性’，用户每次退出页面或浏览器都要清除登陆信息，每次进入系统都要重新登陆（每次登陆还要手机验证码等乱七八糟的验证信息，，，求用户的心里阴影面积），但是刷新页面不可以清除登陆信息。<br>解决思路： javascript 对于浏览器的关闭和刷新会触发两个事件 <code>onbeforeunload()</code>和<code>onunload()</code>，问题在于如何区分用户是想刷新还是退出（此时应该将用户催眠，然后获得用户的思想，预判用户走位及操作。。。），本文主要记录这两个方法的区别，设备兼容性及如何催眠用户（开玩笑的），是如何区分刷新和退出浏览器</p></p>
+            <p class="article-more-link">
+                <a href="/bolg/2018/12/12/监听浏览器刷新及关闭/#more">查看更多</a>
+            </p>
+        
+        </div>
+        
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://zhangjichengcc.github.io/bolg/2018/12/12/监听浏览器刷新及关闭/" data-id="cjpktvx01000h4kuj38b0cqja" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+    <article id="post-jenkins部署个人博客" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            
+	
+		<a href="/bolg/2018/12/08/jenkins部署个人博客/" itemprop="url">
+            <img src="/bolg/2018/12/08/jenkins部署个人博客/jenkins.png" class="article-banner" />
+        </a>
+	
+
+
+
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/bolg/2018/12/08/jenkins部署个人博客/">jenkins+github+hexo 部署个人博客</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/bolg/2018/12/08/jenkins部署个人博客/">
+            <time datetime="2018-12-08T07:26:12.000Z" itemprop="datePublished">2018-12-08</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/bolg/categories/随笔/">随笔</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/bolg/tags/jenkins/">jenkins</a>, <a class="tag-link" href="/bolg/tags/js/">js</a>, <a class="tag-link" href="/bolg/tags/前端/">前端</a>, <a class="tag-link" href="/bolg/tags/部署/">部署</a>
+    </div>
+
+                        </br>
+                        <span class="article-meta-readCount" id="busuanzi_container_page_pv">
+                           阅读量<span id="busuanzi_value_page_pv"></span>次
+                        </span>
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><blockquote>
+<p>Jenkins是一个开源软件项目，是基于Java开发的一种持续集成工具，用于监控持续重复的工作，旨在提供一个开放易用的软件平台，使软件的持续集成变成可能。</p>
+</blockquote></p>
+            <p class="article-more-link">
+                <a href="/bolg/2018/12/08/jenkins部署个人博客/#more">查看更多</a>
+            </p>
+        
+        </div>
+        
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://zhangjichengcc.github.io/bolg/2018/12/08/jenkins部署个人博客/" data-id="cjpktvx04000k4kujcnpwhr9a" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
     <article id="post-HTTP状态码和AJAX状态值" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -186,7 +468,7 @@
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/bolg/2018/11/29/HTTP状态码和AJAX状态值/">HTTP状态码和AJAX状态值hexo d</a>
+            <a class="article-title" href="/bolg/2018/11/29/HTTP状态码和AJAX状态值/">HTTP状态码和AJAX状态值hexo44</a>
         </h1>
     
 
@@ -240,7 +522,7 @@
 
 </div>
 
-    <a data-url="https://zhangjichengcc.github.io/bolg/2018/11/29/HTTP状态码和AJAX状态值/" data-id="cjpdogkjd0000j0ujo8huczlp" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="https://zhangjichengcc.github.io/bolg/2018/11/29/HTTP状态码和AJAX状态值/" data-id="cjpktvwys00004kuj8wuwxph9" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -387,7 +669,7 @@
 
 </div>
 
-    <a data-url="https://zhangjichengcc.github.io/bolg/2018/10/10/async/" data-id="cjpdogkjy000aj0ujdffjjayi" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="https://zhangjichengcc.github.io/bolg/2018/10/10/async/" data-id="cjpktvwzi00094kuj8b4ob7ul" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -534,7 +816,7 @@
 
 </div>
 
-    <a data-url="https://zhangjichengcc.github.io/bolg/2018/10/10/Generator/" data-id="cjpdogkji0006j0ujkveyk4je" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="https://zhangjichengcc.github.io/bolg/2018/10/10/Generator/" data-id="cjpktvwze00084kujl8goondz" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -679,7 +961,7 @@
 
 </div>
 
-    <a data-url="https://zhangjichengcc.github.io/bolg/2018/10/09/js构造函数/" data-id="cjpdogkke000ij0ujlr0pbjit" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="https://zhangjichengcc.github.io/bolg/2018/10/09/js构造函数/" data-id="cjpktvx07000p4kujkq0b2sof" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -826,7 +1108,7 @@
 
 </div>
 
-    <a data-url="https://zhangjichengcc.github.io/bolg/2018/10/09/Promise/" data-id="cjpdogkji0002j0ujp8mdy8ez" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="https://zhangjichengcc.github.io/bolg/2018/10/09/Promise/" data-id="cjpktvwz900064kujw0arcpu5" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -971,7 +1253,7 @@
 
 </div>
 
-    <a data-url="https://zhangjichengcc.github.io/bolg/2018/09/29/RISE/" data-id="cjpdogkjy0008j0uji99rgl5q" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="https://zhangjichengcc.github.io/bolg/2018/09/29/RISE/" data-id="cjpktvwz200024kujiqdm8f3e" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1118,7 +1400,7 @@
 
 </div>
 
-    <a data-url="https://zhangjichengcc.github.io/bolg/2018/04/08/递归尾调用优化/" data-id="cjpdogkke000qj0ujjwcla66k" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="https://zhangjichengcc.github.io/bolg/2018/04/08/递归尾调用优化/" data-id="cjpktvx0d000x4kujjtdvxsl9" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1263,277 +1545,7 @@
 
 </div>
 
-    <a data-url="https://zhangjichengcc.github.io/bolg/2018/04/08/递归树结构解析/" data-id="cjpdogkke000sj0ujemf5njnz" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-    <article id="post-给Hexo博客添加访问统计" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/bolg/2018/03/20/给Hexo博客添加访问统计/">给Hexo博客添加访问统计</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/bolg/2018/03/20/给Hexo博客添加访问统计/">
-            <time datetime="2018-03-20T08:35:58.000Z" itemprop="datePublished">2018-03-20</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/bolg/categories/工具/">工具</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/bolg/tags/hexo/">hexo</a>
-    </div>
-
-                        </br>
-                        <span class="article-meta-readCount" id="busuanzi_container_page_pv">
-                           阅读量<span id="busuanzi_value_page_pv"></span>次
-                        </span>
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>导语： 引入不蒜子为你的博客添加访问量<br></p></p>
-            <p class="article-more-link">
-                <a href="/bolg/2018/03/20/给Hexo博客添加访问统计/#more">查看更多</a>
-            </p>
-        
-        </div>
-        
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://zhangjichengcc.github.io/bolg/2018/03/20/给Hexo博客添加访问统计/" data-id="cjpdogkke000lj0ujbhyxksop" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-    <article id="post-hexo-创建文章" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/bolg/2018/02/27/hexo-创建文章/">hexo 创建文章 &amp; 文章缩略图及banner &amp; MarkDown</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/bolg/2018/02/27/hexo-创建文章/">
-            <time datetime="2018-02-27T06:29:09.000Z" itemprop="datePublished">2018-02-27</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/bolg/categories/工具/">工具</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/bolg/tags/hexo/">hexo</a>, <a class="tag-link" href="/bolg/tags/markdown/">markdown</a>, <a class="tag-link" href="/bolg/tags/前端/">前端</a>
-    </div>
-
-                        </br>
-                        <span class="article-meta-readCount" id="busuanzi_container_page_pv">
-                           阅读量<span id="busuanzi_value_page_pv"></span>次
-                        </span>
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>hexo 文章的创建及markdown语法<br></p></p>
-            <p class="article-more-link">
-                <a href="/bolg/2018/02/27/hexo-创建文章/#more">查看更多</a>
-            </p>
-        
-        </div>
-        
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://zhangjichengcc.github.io/bolg/2018/02/27/hexo-创建文章/" data-id="cjpdogkke000ej0ujtf8vwb8c" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="https://zhangjichengcc.github.io/bolg/2018/04/08/递归树结构解析/" data-id="cjpktvx0g000z4kujtejsz8mm" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1625,17 +1637,55 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/bolg/2018/11/29/HTTP状态码和AJAX状态值/" class="thumbnail">
+                            <a href="/bolg/2018/12/12/监听浏览器刷新及关闭/" class="thumbnail">
     
     
-        <span style="background-image:url(/bolg/2018/11/29/HTTP状态码和AJAX状态值/http.jpg)" alt="HTTP状态码和AJAX状态值hexo d" class="thumbnail-image"></span>
+        <span class="thumbnail-image thumbnail-none"></span>
     
 </a>
 
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-title"><a href="/bolg/2018/11/29/HTTP状态码和AJAX状态值/" class="title">HTTP状态码和AJAX状态值hexo d</a></p>
+                            <p class="item-title"><a href="/bolg/2018/12/12/监听浏览器刷新及关闭/" class="title">监听浏览器刷新及关闭</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/bolg/categories/随笔/">随笔</a></p>
+                            <p class="item-date"><time datetime="2018-12-12T02:37:25.000Z" itemprop="datePublished">2018-12-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/bolg/2018/12/08/jenkins部署个人博客/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/bolg/2018/12/08/jenkins部署个人博客/jenkins.png)" alt="jenkins+github+hexo 部署个人博客" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-title"><a href="/bolg/2018/12/08/jenkins部署个人博客/" class="title">jenkins+github+hexo 部署个人博客</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/bolg/categories/随笔/">随笔</a></p>
+                            <p class="item-date"><time datetime="2018-12-08T07:26:12.000Z" itemprop="datePublished">2018-12-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/bolg/2018/11/29/HTTP状态码和AJAX状态值/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/bolg/2018/11/29/HTTP状态码和AJAX状态值/http.jpg)" alt="HTTP状态码和AJAX状态值hexo44" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-title"><a href="/bolg/2018/11/29/HTTP状态码和AJAX状态值/" class="title">HTTP状态码和AJAX状态值hexo44</a></p>
                             <p class="item-category"><a class="article-category-link" href="/bolg/categories/笔记/">笔记</a></p>
                             <p class="item-date"><time datetime="2018-11-29T07:01:52.000Z" itemprop="datePublished">2018-11-29</time></p>
                         </div>
@@ -1679,44 +1729,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/bolg/2018/10/09/js构造函数/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/bolg/2018/10/09/js构造函数/banner.jpg)" alt="js构造函数" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-title"><a href="/bolg/2018/10/09/js构造函数/" class="title">js构造函数</a></p>
-                            <p class="item-category"><a class="article-category-link" href="/bolg/categories/笔记/">笔记</a></p>
-                            <p class="item-date"><time datetime="2018-10-09T08:53:48.000Z" itemprop="datePublished">2018-10-09</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/bolg/2018/10/09/Promise/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2447683882,2644927629&amp;fm=26&amp;gp=0.jpg)" alt="ES6 Promise" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-title"><a href="/bolg/2018/10/09/Promise/" class="title">ES6 Promise</a></p>
-                            <p class="item-category"><a class="article-category-link" href="/bolg/categories/笔记/">笔记</a></p>
-                            <p class="item-date"><time datetime="2018-10-09T07:13:04.000Z" itemprop="datePublished">2018-10-09</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1726,7 +1738,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/娱乐/">娱乐</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/工具/">工具</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/笔记/">笔记</a><span class="category-list-count">7</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/娱乐/">娱乐</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/工具/">工具</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/笔记/">笔记</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/随笔/">随笔</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -1735,7 +1747,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/10/">十月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/09/">九月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/02/">二月 2018</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/10/">十月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/09/">九月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/02/">二月 2018</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -1744,7 +1756,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/ES6/">ES6</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/LOL/">LOL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/hexo/">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/js/">js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/video/">video</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/前端/">前端</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/算法/">算法</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/ES6/">ES6</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/LOL/">LOL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/hexo/">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/jenkins/">jenkins</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/js/">js</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/video/">video</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/前端/">前端</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/算法/">算法</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/部署/">部署</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1753,7 +1765,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/bolg/tags/ES6/" style="font-size: 17.5px;">ES6</a> <a href="/bolg/tags/LOL/" style="font-size: 10px;">LOL</a> <a href="/bolg/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/bolg/tags/js/" style="font-size: 20px;">js</a> <a href="/bolg/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/bolg/tags/video/" style="font-size: 10px;">video</a> <a href="/bolg/tags/前端/" style="font-size: 20px;">前端</a> <a href="/bolg/tags/算法/" style="font-size: 12.5px;">算法</a>
+            <a href="/bolg/tags/ES6/" style="font-size: 17.5px;">ES6</a> <a href="/bolg/tags/LOL/" style="font-size: 10px;">LOL</a> <a href="/bolg/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/bolg/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/bolg/tags/js/" style="font-size: 20px;">js</a> <a href="/bolg/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/bolg/tags/video/" style="font-size: 10px;">video</a> <a href="/bolg/tags/前端/" style="font-size: 20px;">前端</a> <a href="/bolg/tags/算法/" style="font-size: 12.5px;">算法</a> <a href="/bolg/tags/部署/" style="font-size: 10px;">部署</a>
         </div>
     </div>
 

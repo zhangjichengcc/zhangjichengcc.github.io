@@ -3,19 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>文章分类 | ZJC</title>
+    <title>监听浏览器刷新及关闭 | ZJC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Zhangjicheng个人站，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面">
-<meta property="og:type" content="website">
-<meta property="og:title" content="文章分类">
-<meta property="og:url" content="https://zhangjichengcc.github.io/bolg/categories/index.html">
+    <meta name="description" content="需求背景： 为保证‘高度安全性’，用户每次退出页面或浏览器都要清除登陆信息，每次进入系统都要重新登陆（每次登陆还要手机验证码等乱七八糟的验证信息，，，求用户的心里阴影面积），但是刷新页面不可以清除登陆信息。解决思路： javascript 对于浏览器的关闭和刷新会触发两个事件 onbeforeunload()和onunload()，问题在于如何区分用户是想刷新还是退出（此时应该将用户催眠，然后获得">
+<meta name="keywords" content="js,前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="监听浏览器刷新及关闭">
+<meta property="og:url" content="https://zhangjichengcc.github.io/bolg/2018/12/12/监听浏览器刷新及关闭/index.html">
 <meta property="og:site_name" content="ZJC">
-<meta property="og:description" content="Zhangjicheng个人站，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面">
+<meta property="og:description" content="需求背景： 为保证‘高度安全性’，用户每次退出页面或浏览器都要清除登陆信息，每次进入系统都要重新登陆（每次登陆还要手机验证码等乱七八糟的验证信息，，，求用户的心里阴影面积），但是刷新页面不可以清除登陆信息。解决思路： javascript 对于浏览器的关闭和刷新会触发两个事件 onbeforeunload()和onunload()，问题在于如何区分用户是想刷新还是退出（此时应该将用户催眠，然后获得">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-27T10:00:27.766Z">
+<meta property="og:updated_time" content="2018-12-12T07:02:06.225Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="文章分类">
-<meta name="twitter:description" content="Zhangjicheng个人站，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面">
+<meta name="twitter:title" content="监听浏览器刷新及关闭">
+<meta name="twitter:description" content="需求背景： 为保证‘高度安全性’，用户每次退出页面或浏览器都要清除登陆信息，每次进入系统都要重新登陆（每次登陆还要手机验证码等乱七八糟的验证信息，，，求用户的心里阴影面积），但是刷新页面不可以清除登陆信息。解决思路： javascript 对于浏览器的关闭和刷新会触发两个事件 onbeforeunload()和onunload()，问题在于如何区分用户是想刷新还是退出（此时应该将用户催眠，然后获得">
     
 
     
@@ -178,16 +179,249 @@
 </aside>
 
             
-            <section id="main"><section class="layout-wrap">
-    <div class="layout-title">
-        <span>文章分类</span>
-    </div>
-    <div class="layout-wrap-inner list-categories">
+            <section id="main"><article id="post-监听浏览器刷新及关闭" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/娱乐/">娱乐</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/工具/">工具</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/笔记/">笔记</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/随笔/">随笔</a><span class="category-list-count">2</span></li></ul>
         
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            监听浏览器刷新及关闭
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/bolg/2018/12/12/监听浏览器刷新及关闭/">
+            <time datetime="2018-12-12T02:37:25.000Z" itemprop="datePublished">2018-12-12</time>
+        </a>
     </div>
-</section></section>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/bolg/categories/随笔/">随笔</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/bolg/tags/js/">js</a>, <a class="tag-link" href="/bolg/tags/前端/">前端</a>
+    </div>
+
+                        </br>
+                        <span class="article-meta-readCount" id="busuanzi_container_page_pv">
+                           阅读量<span id="busuanzi_value_page_pv"></span>次
+                        </span>
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>需求背景： 为保证‘高度安全性’，用户每次退出页面或浏览器都要清除登陆信息，每次进入系统都要重新登陆（每次登陆还要手机验证码等乱七八糟的验证信息，，，求用户的心里阴影面积），但是刷新页面不可以清除登陆信息。<br>解决思路： javascript 对于浏览器的关闭和刷新会触发两个事件 <code>onbeforeunload()</code>和<code>onunload()</code>，问题在于如何区分用户是想刷新还是退出（此时应该将用户催眠，然后获得用户的思想，预判用户走位及操作。。。），本文主要记录这两个方法的区别，设备兼容性及如何催眠用户（开玩笑的），是如何区分刷新和退出浏览器</p>
+<a id="more"></a>
+<h3 id="onbeforeunload-和onunload"><a href="#onbeforeunload-和onunload" class="headerlink" title="onbeforeunload()和onunload()"></a>onbeforeunload()和onunload()</h3><blockquote>
+<p>onbeforeunload 和 onunload 都是在页面刷新或退出时触发的事件</p>
+</blockquote>
+<p>用法：</p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onunload</td>
+<td>window.onunload=function(){SomeJavaScriptCode};</td>
+</tr>
+<tr>
+<td>onbeforeunload</td>
+<td>window.onbeforeunload=function(){SomeJavaScriptCode};</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>区别：</p>
+<blockquote>
+<ol>
+<li><code>unbeforeunload()</code>是在页面刷新或关闭之前触发的事件，而<code>onubload()</code>是在页面刷新或关闭之后才会触发的。</li>
+<li><code>unbeforeunload()</code>事件执行的顺序在<code>onunload()</code>事件之前发生。</li>
+<li><code>unbeforeunload()</code>事件可以禁止<code>onunload()</code>事件的触发。</li>
+<li><code>onunload()</code>事件是无法阻止页面关闭的。</li>
+</ol>
+</blockquote>
+<p>兼容性（pc）：</p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th style="text-align:center">Chrome</th>
+<th style="text-align:center">Firefox</th>
+<th style="text-align:center">IE</th>
+<th style="text-align:center">Opera</th>
+<th style="text-align:center">Safari</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onunload</td>
+<td style="text-align:center">yes&nbsp;&nbsp;</td>
+<td style="text-align:center">yes&nbsp;&nbsp;</td>
+<td style="text-align:center">yes&nbsp;&nbsp;</td>
+<td style="text-align:center">yes&nbsp;&nbsp;</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td>onbeforeunload</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">12</td>
+<td style="text-align:center">3</td>
+</tr>
+</tbody>
+</table>
+<p>onbeforeunoad 在移动端基本都不兼容，onunload则兼容大部分主流移动端浏览器</p>
+</blockquote>
+<blockquote>
+<p>参考文献：<br>MDN: <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/onbeforeunload" target="_blank" rel="noopener">window.onbeforeunload</a><br>MDN: <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/onunload" target="_blank" rel="noopener">window.onunload</a></p>
+</blockquote>
+<h3 id="区分刷新和退出"><a href="#区分刷新和退出" class="headerlink" title="区分刷新和退出"></a>区分刷新和退出</h3><blockquote>
+<p>在浏览器关闭前是无法判断用户是刷新还是退出，所以我们在用户再次打开的时候来判断用户是否刷新</p>
+</blockquote>
+<blockquote>
+<p>解决思路：</p>
+<ol>
+<li>用户关闭浏览器时，记录当前时间，并存于浏览器缓存中</li>
+<li>用户再次打开页面时，获取上次退出的时间，并于当前时间进行比较，若小于5s则表示用户执行的是刷新操作，若大于5s则判定为退出</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>注意： 5s并非固定，要根据实际情况调整</p>
+</blockquote>
+<p>上代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 进入页面执行</span></span><br><span class="line"><span class="comment">// 记录当前时间并转成时间戳</span></span><br><span class="line"><span class="keyword">const</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</span><br><span class="line"><span class="comment">// 从缓存中获取用户上次退出的时间戳</span></span><br><span class="line"><span class="keyword">const</span> leaveTime = <span class="built_in">parseInt</span>(localStorage.getItem(<span class="string">'leaveTime'</span>), <span class="number">10</span>);</span><br><span class="line"><span class="comment">// 判断是否为刷新，两次间隔在5s内判定为刷新操作</span></span><br><span class="line"><span class="keyword">const</span> refresh = (now - leaveTime) &lt;= <span class="number">5000</span>;</span><br><span class="line"><span class="comment">// 测试alert</span></span><br><span class="line">alert(refresh ? <span class="string">'刷新'</span> : <span class="string">'重新登陆'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 退出当前页面执行</span></span><br><span class="line"><span class="built_in">window</span>.onunload = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123; <span class="comment">// ios 不支持 window.onbeforeunload()</span></span><br><span class="line">  <span class="comment">// 将退出时间存于localstorage中</span></span><br><span class="line">  localStorage.setItem(<span class="string">'leaveTime'</span>, <span class="keyword">new</span> <span class="built_in">Date</span>().getTime());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+        </div>
+        
+            
+    
+        <section id="comments">
+    <h2 class="valine-title">
+        <i class="fas fa-write"></i>评论区
+        <span class="valine-title-info">（请完善信息用于邮件接收评论的反馈）</span>
+    </h2>
+    <div id="valine-thread"></div>
+</section>
+    
+
+        
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://zhangjichengcc.github.io/bolg/2018/12/12/监听浏览器刷新及关闭/" data-id="cjpktvx01000h4kuj38b0cqja" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/bolg/2018/12/08/jenkins部署个人博客/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">jenkins+github+hexo 部署个人博客</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+</section>
             
                 
 <aside id="sidebar">
